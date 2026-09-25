@@ -138,3 +138,9 @@ def eu_exports_to_uk() -> dict[str, float]:
     """EU27 exports to the UK, all goods, SA, in £ million at each month's average rate."""
     euros, rate = _eurostat("eurostat_eu_exports_to_uk.json"), _eurostat("eurostat_eur_gbp.json")
     return {m: v * rate[m] for m, v in euros.items() if m in rate}
+
+
+@functools.lru_cache(maxsize=None)
+def eu_exports_to_uk_volume() -> dict[str, float]:
+    """Eurostat's volume index of the same exports, 2021 = 100. Not used by the study: see DESIGN-DECISIONS."""
+    return _eurostat("eurostat_eu_exports_to_uk_volume.json")
