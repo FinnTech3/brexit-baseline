@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 640" width="1120" height="640" role="img" aria-label="Imports: every baseline that passes says lower. Exports: they disagree">
+<rect width="1120" height="640" fill="#161614"/>
+<text x="64.0" y="44.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="21" font-weight="600" fill="#f3f2ee" text-anchor="start">Imports: every baseline that passes says lower. Exports: they disagree</text>
+<text x="64.0" y="70.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="14" font-weight="400" fill="#c3c2b7" text-anchor="start">UK goods trade with the EU in the latest twelve months against each baseline, in volume. Filled: got its four test years within 5%</text>
+<line x1="234.0" y1="120.0" x2="234.0" y2="552.0" stroke="#2a2a27" stroke-width="1"/>
+<text x="234.0" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">−40%</text>
+<line x1="387.8" y1="120.0" x2="387.8" y2="552.0" stroke="#2a2a27" stroke-width="1"/>
+<text x="387.8" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">−20%</text>
+<line x1="541.6" y1="120.0" x2="541.6" y2="552.0" stroke="#3d3d3a" stroke-width="1.5"/>
+<text x="541.6" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">0</text>
+<line x1="695.5" y1="120.0" x2="695.5" y2="552.0" stroke="#2a2a27" stroke-width="1"/>
+<text x="695.5" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">+20%</text>
+<line x1="849.3" y1="120.0" x2="849.3" y2="552.0" stroke="#2a2a27" stroke-width="1"/>
+<text x="849.3" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">+40%</text>
+<line x1="1003.1" y1="120.0" x2="1003.1" y2="552.0" stroke="#2a2a27" stroke-width="1"/>
+<text x="1003.1" y="574.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="middle">+60%</text>
+<text x="533.6" y="108.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#9a988f" text-anchor="end">← lower than the baseline expects</text>
+<text x="549.6" y="108.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">higher →</text>
+<text x="64.0" y="152.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#f3f2ee" text-anchor="start">Exports</text>
+<text x="64.0" y="170.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#c3c2b7" text-anchor="start">from before the vote</text>
+<text x="64.0" y="188.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">(2015); 12 of 37 pass</text>
+<circle cx="343.5" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="352.4" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="364.9" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="373.1" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="381.1" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="386.7" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="409.3" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="424.5" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="435.5" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="447.9" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="450.9" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="464.8" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="475.5" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="478.1" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="478.8" cy="151.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="486.8" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="491.3" cy="169.0" r="6.3" fill="#161614"/>
+<circle cx="491.3" cy="169.0" r="4.3" fill="#9c93f0"/>
+<circle cx="508.9" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="520.9" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="520.9" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="522.8" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="530.8" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="531.0" cy="151.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="538.0" cy="169.0" r="6.3" fill="#161614"/>
+<circle cx="538.0" cy="169.0" r="4.3" fill="#9c93f0"/>
+<circle cx="561.6" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="561.6" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="611.6" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="611.6" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="647.8" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="647.8" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="660.1" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="660.1" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="755.4" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="836.1" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="836.1" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="836.7" cy="169.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="840.5" cy="151.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="841.4" cy="178.0" r="6.3" fill="#161614"/>
+<circle cx="841.4" cy="178.0" r="4.3" fill="#9c93f0"/>
+<circle cx="858.9" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="868.2" cy="160.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="887.8" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="887.8" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="917.7" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="917.7" cy="160.0" r="4.3" fill="#9c93f0"/>
+<circle cx="1036.1" cy="160.0" r="6.3" fill="#161614"/>
+<circle cx="1036.1" cy="160.0" r="4.3" fill="#9c93f0"/>
+<text x="64.0" y="260.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#f3f2ee" text-anchor="start">Exports</text>
+<text x="64.0" y="278.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#c3c2b7" text-anchor="start">from before the new rules</text>
+<text x="64.0" y="296.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">(2019); 8 of 49 pass</text>
+<circle cx="311.4" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="317.1" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="323.4" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="327.7" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="356.0" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="361.4" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="367.1" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="370.1" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="378.9" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="381.8" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="390.4" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="398.5" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="405.5" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="406.4" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="412.4" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="430.6" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="436.6" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="442.2" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="442.4" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="442.9" cy="286.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="443.3" cy="250.0" r="6.3" fill="#161614"/>
+<circle cx="443.3" cy="250.0" r="4.3" fill="#9c93f0"/>
+<circle cx="451.8" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="451.8" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="455.7" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="462.9" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="472.1" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="479.4" cy="277.0" r="6.3" fill="#161614"/>
+<circle cx="479.4" cy="277.0" r="4.3" fill="#9c93f0"/>
+<circle cx="479.7" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="480.2" cy="286.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="481.3" cy="268.0" r="6.3" fill="#161614"/>
+<circle cx="481.3" cy="268.0" r="4.3" fill="#9c93f0"/>
+<circle cx="482.4" cy="250.0" r="6.3" fill="#161614"/>
+<circle cx="482.4" cy="250.0" r="4.3" fill="#9c93f0"/>
+<circle cx="486.9" cy="295.0" r="6.3" fill="#161614"/>
+<circle cx="486.9" cy="295.0" r="4.3" fill="#9c93f0"/>
+<circle cx="495.6" cy="268.0" r="6.3" fill="#161614"/>
+<circle cx="495.6" cy="268.0" r="4.3" fill="#9c93f0"/>
+<circle cx="502.4" cy="277.0" r="6.3" fill="#161614"/>
+<circle cx="502.4" cy="277.0" r="4.3" fill="#9c93f0"/>
+<circle cx="504.3" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="511.4" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="535.3" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="535.8" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="540.9" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="576.5" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="613.9" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="629.7" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="661.3" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="694.8" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="697.7" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="703.6" cy="259.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="712.4" cy="268.0" r="6.3" fill="#161614"/>
+<circle cx="712.4" cy="268.0" r="4.3" fill="#9c93f0"/>
+<circle cx="712.7" cy="277.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="725.3" cy="268.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<text x="64.0" y="368.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#f3f2ee" text-anchor="start">Imports</text>
+<text x="64.0" y="386.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#c3c2b7" text-anchor="start">from before the vote</text>
+<text x="64.0" y="404.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">(2015); 12 of 37 pass</text>
+<circle cx="250.1" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="253.4" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="260.8" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="270.7" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="295.7" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="296.5" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="331.6" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="338.6" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="378.9" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="409.5" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="417.7" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="439.6" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="446.1" cy="385.0" r="6.3" fill="#161614"/>
+<circle cx="446.1" cy="385.0" r="4.3" fill="#9c93f0"/>
+<circle cx="451.2" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="451.2" cy="367.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="456.5" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="465.5" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="467.2" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="470.1" cy="367.0" r="6.3" fill="#161614"/>
+<circle cx="470.1" cy="367.0" r="4.3" fill="#9c93f0"/>
+<circle cx="478.0" cy="376.0" r="6.3" fill="#161614"/>
+<circle cx="478.0" cy="376.0" r="4.3" fill="#9c93f0"/>
+<circle cx="478.9" cy="385.0" r="6.3" fill="#161614"/>
+<circle cx="478.9" cy="385.0" r="4.3" fill="#9c93f0"/>
+<circle cx="480.7" cy="367.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="483.8" cy="394.0" r="6.3" fill="#161614"/>
+<circle cx="483.8" cy="394.0" r="4.3" fill="#9c93f0"/>
+<circle cx="487.9" cy="376.0" r="6.3" fill="#161614"/>
+<circle cx="487.9" cy="376.0" r="4.3" fill="#9c93f0"/>
+<circle cx="488.7" cy="385.0" r="6.3" fill="#161614"/>
+<circle cx="488.7" cy="385.0" r="4.3" fill="#9c93f0"/>
+<circle cx="490.5" cy="367.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="491.7" cy="358.0" r="6.3" fill="#161614"/>
+<circle cx="491.7" cy="358.0" r="4.3" fill="#9c93f0"/>
+<circle cx="492.8" cy="403.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="495.7" cy="394.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="497.6" cy="376.0" r="6.3" fill="#161614"/>
+<circle cx="497.6" cy="376.0" r="4.3" fill="#9c93f0"/>
+<circle cx="499.2" cy="385.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="500.0" cy="367.0" r="6.3" fill="#161614"/>
+<circle cx="500.0" cy="367.0" r="4.3" fill="#9c93f0"/>
+<circle cx="500.4" cy="349.0" r="6.3" fill="#161614"/>
+<circle cx="500.4" cy="349.0" r="4.3" fill="#9c93f0"/>
+<circle cx="500.9" cy="358.0" r="6.3" fill="#161614"/>
+<circle cx="500.9" cy="358.0" r="4.3" fill="#9c93f0"/>
+<circle cx="520.3" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="531.7" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="549.9" cy="376.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<text x="64.0" y="476.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#f3f2ee" text-anchor="start">Imports</text>
+<text x="64.0" y="494.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#c3c2b7" text-anchor="start">from before the new rules</text>
+<text x="64.0" y="512.0" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">(2019); 19 of 49 pass</text>
+<circle cx="333.3" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="353.0" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="355.9" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="356.0" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="359.1" cy="502.0" r="6.3" fill="#161614"/>
+<circle cx="359.1" cy="502.0" r="4.3" fill="#9c93f0"/>
+<circle cx="361.8" cy="466.0" r="6.3" fill="#161614"/>
+<circle cx="361.8" cy="466.0" r="4.3" fill="#9c93f0"/>
+<circle cx="371.8" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="372.8" cy="493.0" r="6.3" fill="#161614"/>
+<circle cx="372.8" cy="493.0" r="4.3" fill="#9c93f0"/>
+<circle cx="375.0" cy="475.0" r="6.3" fill="#161614"/>
+<circle cx="375.0" cy="475.0" r="4.3" fill="#9c93f0"/>
+<circle cx="381.6" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="385.1" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="387.5" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="397.7" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="402.0" cy="493.0" r="6.3" fill="#161614"/>
+<circle cx="402.0" cy="493.0" r="4.3" fill="#9c93f0"/>
+<circle cx="406.8" cy="484.0" r="6.3" fill="#161614"/>
+<circle cx="406.8" cy="484.0" r="4.3" fill="#9c93f0"/>
+<circle cx="407.8" cy="475.0" r="6.3" fill="#161614"/>
+<circle cx="407.8" cy="475.0" r="4.3" fill="#9c93f0"/>
+<circle cx="410.3" cy="502.0" r="6.3" fill="#161614"/>
+<circle cx="410.3" cy="502.0" r="4.3" fill="#9c93f0"/>
+<circle cx="415.4" cy="493.0" r="6.3" fill="#161614"/>
+<circle cx="415.4" cy="493.0" r="4.3" fill="#9c93f0"/>
+<circle cx="417.7" cy="484.0" r="6.3" fill="#161614"/>
+<circle cx="417.7" cy="484.0" r="4.3" fill="#9c93f0"/>
+<circle cx="421.7" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="422.4" cy="502.0" r="6.3" fill="#161614"/>
+<circle cx="422.4" cy="502.0" r="4.3" fill="#9c93f0"/>
+<circle cx="426.6" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="435.1" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="439.5" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="440.0" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="440.9" cy="502.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="442.3" cy="466.0" r="6.3" fill="#161614"/>
+<circle cx="442.3" cy="466.0" r="4.3" fill="#9c93f0"/>
+<circle cx="443.3" cy="511.0" r="6.3" fill="#161614"/>
+<circle cx="443.3" cy="511.0" r="4.3" fill="#9c93f0"/>
+<circle cx="446.3" cy="484.0" r="6.3" fill="#161614"/>
+<circle cx="446.3" cy="484.0" r="4.3" fill="#9c93f0"/>
+<circle cx="447.7" cy="457.0" r="6.3" fill="#161614"/>
+<circle cx="447.7" cy="457.0" r="4.3" fill="#9c93f0"/>
+<circle cx="448.4" cy="520.0" r="6.3" fill="#161614"/>
+<circle cx="448.4" cy="520.0" r="4.3" fill="#9c93f0"/>
+<circle cx="448.9" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="451.5" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="453.4" cy="502.0" r="6.3" fill="#161614"/>
+<circle cx="453.4" cy="502.0" r="4.3" fill="#9c93f0"/>
+<circle cx="455.2" cy="466.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="457.4" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="465.9" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="468.3" cy="484.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="471.2" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="472.2" cy="502.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="472.5" cy="466.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="474.4" cy="511.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="475.2" cy="493.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="477.5" cy="484.0" r="6.3" fill="#161614"/>
+<circle cx="477.5" cy="484.0" r="4.3" fill="#9c93f0"/>
+<circle cx="477.6" cy="457.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="478.8" cy="520.0" r="6.3" fill="#161614"/>
+<circle cx="478.8" cy="520.0" r="4.3" fill="#9c93f0"/>
+<circle cx="480.8" cy="475.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="482.7" cy="502.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<circle cx="483.5" cy="466.0" r="3.8" fill="#161614" stroke="#9a988f" stroke-width="1.5"/>
+<text x="64.0" y="616.0" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#9a988f" text-anchor="start">Chained volumes, goods less precious metals, August 2025 to July 2026. Sources: ONS MRETS; the pipeline in this repo.</text>
+</svg>
