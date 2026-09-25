@@ -12,6 +12,7 @@ from __future__ import annotations
 import csv
 import functools
 import io
+import json
 import lzma
 import os
 import re
@@ -106,3 +107,34 @@ def sections() -> dict[tuple[str, str, str], dict[str, str]]:
 def month_index(period: str) -> tuple[int, int]:
     y, m = period.split()
     return int(y), MONTH_NAMES.index(m) + 1
+
+
+# The EU's side of the same trade, from Eurostat: EU27 exports to the United
+# Kingdom, all goods, seasonally and calendar adjusted, in million euro; and
+# the monthly average pound-per-euro rate to put them in pounds. Eurostat
+# records exports by country of destination on both sides of Brexit, so its
+# exports to the UK are a like-for-like record of the UK's imports from the
+# EU. Its imports from the UK are not: since 2021 they are recorded by country
+# of origin, so goods sent from the UK but made elsewhere are no longer
+# counted as coming from the UK.
+def _eurostat(name: str) -> dict[str, float]:
+    """A single Eurostat series by month, "2016 JUN" style."""
+    with open(os.path.join(SOURCES, name), encoding="utf-8") as f:
+        d = json.load(f)
+    if any(n != 1 for dim, n in zip(d["id"], d["size"]) if dim != "time"):
+        raise ValueError(f"{name}: expected a single series")
+    index = d["dimension"]["time"]["category"]["index"]
+    out = {}
+    for period, i in sorted(index.items(), key=lambda kv: kv[1]):
+        cell = d["value"].get(str(i))
+        if cell is not None:
+            y, m = period.split("-")
+            out[f"{y} {MONTH_NAMES[int(m) - 1]}"] = float(cell)
+    return out
+
+
+@functools.lru_cache(maxsize=None)
+def eu_exports_to_uk() -> dict[str, float]:
+    """EU27 exports to the UK, all goods, SA, in £ million at each month's average rate."""
+    euros, rate = _eurostat("eurostat_eu_exports_to_uk.json"), _eurostat("eurostat_eur_gbp.json")
+    return {m: v * rate[m] for m, v in euros.items() if m in rate}
