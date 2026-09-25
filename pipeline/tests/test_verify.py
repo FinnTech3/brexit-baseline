@@ -27,6 +27,17 @@ def test_twin_chained_volumes_do_not_add_up():
     assert not r.passed
     assert r.detail["matched"] == 190
     assert r.detail["total"] == 2130
+    # all but four fall where every series is still at the reference year's prices
+    assert sum(n for y, n in r.detail["by_year"].items() if y >= 2024) == 186
+
+
+def test_volumes_are_in_2023_prices():
+    # in its reference year a chained volume equals current prices
+    for key, cvm in sources.LESS_PRECIOUS_METALS.items():
+        if key[2] == "CVM":
+            cp = sources.LESS_PRECIOUS_METALS[(key[0], key[1], "CP")]
+            assert sources.value(cvm, "2023") == sources.value(cp, "2023")
+            assert sources.value(cvm, "2022") != sources.value(cp, "2022")
 
 
 def test_every_partner_flow_and_measure_has_ten_sections():

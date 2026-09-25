@@ -24,8 +24,11 @@ def main() -> int:
     r = study.run()
     ev = r["evaluation"]
     print("Verification")
-    for c in r["checks"] + [study.verify.check_volumes_added()]:
+    twin = study.verify.check_volumes_added()
+    for c in r["checks"] + [twin]:
         print(f"  {'pass' if c.passed else 'FAIL'}  {c.name}: {c.summary}")
+    late = sum(n for y, n in twin.detail["by_year"].items() if y >= 2024)
+    print(f"  the twin's matches from January 2024 on: {late} of {twin.detail['matched']}")
 
     print(f"\nThe latest twelve months: {ev[0]} to {ev[-1]}")
     print(f"A recipe passes if its test is within {study.PASS:.0%}\n")
@@ -102,6 +105,19 @@ def main() -> int:
     uk_vol = series(study.LESS_PRECIOUS_METALS[("EU", "Imports", "CVM")])
     drift = lambda y: sum(uk_vol[m] for m in months() if study.year(m) == y) / sum(vol[m] for m in vol if study.year(m) == y)  # noqa: E731
     print(f"  Eurostat's volume index against the ONS's volumes, 2002 to 2019: {pct(drift(2019) / drift(2002) - 1)}")
+    other = series(study.LESS_PRECIOUS_METALS[("Non-EU", "Imports", "CVM")])
+    last = [m for m in months() if m in vol][-12:]
+    base = [m for m in months() if study.year(m) == 2015]
+    naive = (sum(vol[m] for m in last) / sum(other[m] for m in last)) / (sum(vol[m] for m in base) / sum(other[m] for m in base)) - 1
+    print(f"  imports with non-EU from 2015, using that index for the EU side ({last[0]} to {last[-1]}): {pct(naive)}")
+
+    print("\nPrecious metals, non-EU, monthly swings since 2016")
+    for flow in study.FLOWS:
+        pm = series(study.PRECIOUS_METALS[("Non-EU", flow)])
+        ms = [m for m in months() if m in pm]
+        swings = [abs(pm[ms[i]] - pm[ms[i - 1]]) for i in range(1, len(ms)) if study.year(ms[i]) >= 2016]
+        print(f"  {flow}: £1 billion or more in {sum(x >= 1000 for x in swings)} of {len(swings)} months; "
+              f"the largest £{max(swings) / 1000:.1f} billion")
 
     print("\nWhat I got wrong first")
     short = study.Recipe("Exports", "own trend", 2015, 2013)

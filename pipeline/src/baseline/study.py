@@ -36,7 +36,7 @@ import math
 from dataclasses import dataclass
 
 from . import verify
-from .sources import LESS_PRECIOUS_METALS, TOTALS, eu_exports_to_uk, month_index, months, series
+from .sources import LESS_PRECIOUS_METALS, PRECIOUS_METALS, TOTALS, eu_exports_to_uk, month_index, months, series
 
 FLOWS = ("Exports", "Imports")
 FAMILIES = ("own trend", "with non-EU", "with non-EU and drift")

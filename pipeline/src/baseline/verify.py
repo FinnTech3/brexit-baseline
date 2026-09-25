@@ -52,6 +52,7 @@ def _identities(measure: str) -> list[tuple[str, list[str], list[str], str]]:
 def check_identities(measure: str = "CP", name: str = "Every published total, rebuilt from its parts") -> Result:
     matched = total = 0
     worst = (0.0, "", "")
+    where: dict[int, int] = {}
     for label, plus, minus, whole in _identities(measure):
         for m in months():
             vals = [value(c, m) for c in plus + minus + [whole]]
@@ -61,12 +62,13 @@ def check_identities(measure: str = "CP", name: str = "Every published total, re
             gap = abs(sum(value(c, m) for c in plus) - sum(value(c, m) for c in minus) - value(whole, m))
             if gap <= TOLERANCE:
                 matched += 1
+                where[int(m[:4])] = where.get(int(m[:4]), 0) + 1
             if gap > worst[0]:
                 worst = (gap, label, m)
     return Result(name, matched == total,
                   f"{matched:,} of {total:,} month-identities exact; worst gap £{worst[0]:,.0f}m"
                   + (f" ({worst[1]}, {worst[2]})" if worst[0] else ""),
-                  {"matched": matched, "total": total, "worst": worst})
+                  {"matched": matched, "total": total, "worst": worst, "by_year": where})
 
 
 def _calendar() -> list[tuple[str, list[str]]]:
