@@ -28,8 +28,11 @@ def main() -> int:
     uk, eu = series(study.TOTALS[("EU", "Imports", "CP")]), eu_exports_to_uk()
     both = [m for m in span if m in eu]
 
+    # Python 3.12's sum() compensates for rounding and 3.11's does not, so
+    # anything computed is rounded well below its precision to build the same
+    # file on both
     def column(values: dict[str, float]) -> list[float]:
-        return [values[m] for m in span]
+        return [round(values[m], 6) for m in span]
 
     checks = {c.name: c.detail for c in r["checks"] + [study.verify.check_volumes_added()]}
     data = {
@@ -49,7 +52,7 @@ def main() -> int:
             "first": both[0],
             "uk": [uk[m] for m in both],
             "eu": [round(eu[m], 6) for m in both],
-            "before": study.record_before(),
+            "before": round(study.record_before(), 10),
         },
         "checks": {
             "totals": [checks["Every published total, rebuilt from its parts"][k] for k in ("matched", "total")],
@@ -60,7 +63,8 @@ def main() -> int:
             {
                 "flow": x.recipe.flow, "record": x.recipe.record, "family": x.recipe.family,
                 "cutoff": x.recipe.cutoff, "start": x.recipe.start,
-                "estimate": x.estimate, "test": x.test, "slope": study.slope(x.recipe),
+                "estimate": round(x.estimate, 10), "test": round(x.test, 10),
+                "slope": round(study.slope(x.recipe), 10),
             }
             for res in r["results"].values() for x in res
         ],
