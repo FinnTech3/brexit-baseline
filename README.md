@@ -36,7 +36,7 @@ rise a year.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/two-dark.svg">
-  <img alt="UK goods exports to the EU in the twelve months to each month, 2009 to July 2026, against two baselines. One, in step with non-EU trade at its 2017 to 2019 ratio, expects about 198 billion pounds a year now, so actual exports of 184 billion are 7.1% lower. The other, with the EU's share still falling as it did from 2009 to 2015, expects about 132 billion, so actual exports are 39.0% higher. Each was off by less than 1% on its test years." src="docs/figures/two-light.svg">
+  <img alt="UK goods exports to the EU in the twelve months to each month, 2009 to July 2026, against two baselines. One, in step with non-EU trade at its 2017 to 2019 ratio, expects about 199 billion pounds a year now, so actual exports of 184 billion are 7.1% lower. The other, with the EU's share still falling as it did from 2009 to 2015, expects about 133 billion, so actual exports are 39.0% higher. Each was off by less than 1% on its test years." src="docs/figures/two-light.svg">
 </picture>
 
 **What I think this means.** On imports the figures agree on the direction:
