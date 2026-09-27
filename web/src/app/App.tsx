@@ -318,9 +318,8 @@ function Answer({
           <span className="num">{pct(shown)}</span>
           <span className="dir">{got.estimate < 0 ? "lower" : "higher"}</span>
         </div>
-        <p className="unit">
-          {`than a baseline where ${describe(c, got.slope)} expects: ${bn(got.actual)} against ${bn(got.expected)}.`}
-        </p>
+        <p className="unit">{`than this baseline expects: ${bn(got.actual)} traded, against ${bn(got.expected)} expected.`}</p>
+        <p className="recipe">{`The baseline: ${describe(c, got.slope)}.`}</p>
       </div>
       <div className="answer-side">
         <div className={ok ? "verdict ok" : "verdict no"}>
