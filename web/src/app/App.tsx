@@ -23,6 +23,7 @@ import { StripChart } from "./StripChart";
 import { useCountUp } from "./hooks";
 
 const REPO = "https://github.com/FinnTech3/brexit-baseline";
+const PORTFOLIO = "https://finn-lakin-portfolio.netlify.app/";
 
 const FLOW_LABEL: Record<Flow, string> = {
   Exports: "UK goods exports to the EU",
@@ -177,6 +178,16 @@ export function App() {
         <Controls c={c} set={set} />
 
         {got && d && <Sections d={d} c={c} got={got} />}
+
+        {got && d && (
+          <aside className="signoff">
+            <p>
+              I built this because every Brexit trade figure I had seen quoted assumed one baseline and never said
+              which. If moving the assumption changed your mind about the number, there's more like it at{" "}
+              <a href={PORTFOLIO}>finn-lakin-portfolio.netlify.app</a>.
+            </p>
+          </aside>
+        )}
       </main>
 
       {got && (

@@ -6,6 +6,10 @@ means.
 
 **Try the baselines yourself:** [finntech3.github.io/brexit-baseline](https://finntech3.github.io/brexit-baseline/)
 
+**Why I built this.** Every Brexit trade figure I had seen quoted assumed one
+particular baseline and never said which. I wanted to see the range those
+assumptions actually produce, not add one more confident number to the pile.
+
 ## The finding
 
 **Every baseline that passes a simple test says UK goods imports from the EU
@@ -40,13 +44,15 @@ rise a year.
 </picture>
 
 **What I think this means.** On imports the figures agree on the direction:
-lower, by roughly a twentieth to a quarter. On exports they cannot
-settle it alone, and anyone quoting a single figure for what Brexit did to
-UK exports has made an assumption about the years before the vote, whether
-they say so or not. My own reading leans to exports 5% to 8% lower, because
-the EU's share of UK exports stopped falling in 2012 and held until the new
-rules came in, through the years after the vote as well. But that is a
-judgement about a world that did not happen, not a measurement.
+lower, by roughly a twentieth to a quarter. On exports they cannot settle it
+alone, and anyone quoting a single figure for what Brexit did to UK exports
+has made an assumption about the years before the vote, whether they say so
+or not, and it is usually the one that best suits the point they were already
+going to make. My own reading leans to exports 5% to 8% lower, because the
+EU's share of UK exports stopped falling in 2012 and held until the new rules
+came in, through the years after the vote as well. But that is a judgement
+about a world that did not happen, not a measurement, and I would rather you
+distrust it a little than take it as one.
 
 ## Why exports split: a share that stopped falling
 
