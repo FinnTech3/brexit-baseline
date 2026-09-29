@@ -147,3 +147,41 @@ It is the number most people have heard, so the README quotes it. But it is
 an assumption about all UK trade, goods and services, relative to the size
 of the economy, in the long run. Putting it on the same axis as the gap in
 goods trade with the EU would invite a comparison the two cannot support.
+
+## Why the picture measures the gap and not the level
+
+Drawing 86 baselines as levels against trade makes a rope: every thread sits
+on top of the same series and the disagreement is a few millimetres wide at
+the right-hand edge, which is the only place it matters. Dividing what
+happened by what each baseline expects flattens the trade into a straight line
+and turns the disagreement into the whole height of the picture. It also makes
+the drawing exact rather than indicative: the twelve months a thread's last
+point covers are the twelve the estimate is taken from, so that point is the
+number the page prints, to the ninth decimal place. A test holds all 258 of
+them to the pipeline's.
+
+## Why the sky's edges are fixed
+
+Every trade is drawn between the same two heights, -52% and +72%, so switching
+from exports to imports moves the threads rather than the ruler. The cost is
+that the exports sky leaves its lower third empty, because no exports baseline
+reaches as low as the lowest imports one. That empty third is the point: it is
+how much further imports have fallen.
+
+## Why brightness carries the test and colour carries the recipe
+
+The four things worth knowing about a baseline sit on four different channels,
+so none of them has to be read off a legend. Where a thread leaves the line is
+its cut-off. How high it ends is its answer. Its colour is which of the three
+recipes it uses. Whether it is bright or dim is whether it could forecast four
+ordinary years. The recipe is also named in the readout and set by the
+controls, so nothing is carried by colour alone.
+
+## Why the artwork has no verdict on it
+
+No flags, no shading for good and bad, nothing marking a preferred answer. The
+page's whole argument is that the number follows from the assumption, so the
+picture shows every assumption at the same weight and lets the reader take
+one. The only ranking on it is the placebo test, which is arithmetic rather
+than an opinion: could this recipe forecast four years when nothing had
+changed yet.

@@ -19,11 +19,15 @@ import { between, bn, direction, pct, span } from "../lib/format";
 import { PathChart } from "./PathChart";
 import { RecordsChart } from "./RecordsChart";
 import { ShareCard } from "./ShareCard";
-import { StripChart } from "./StripChart";
+import { build } from "../lib/sky";
+import { SkyChart } from "./Sky";
 import { useCountUp } from "./hooks";
+import { Monogram } from "./series/Monogram";
+import { Note } from "./series/Note";
+import { SeriesStrip } from "./series/SeriesStrip";
+import { PORTFOLIO } from "./series/series";
 
 const REPO = "https://github.com/FinnTech3/brexit-baseline";
-const PORTFOLIO = "https://finn-lakin-portfolio.netlify.app/";
 
 const FLOW_LABEL: Record<Flow, string> = {
   Exports: "UK goods exports to the EU",
@@ -137,15 +141,13 @@ export function App() {
 
   return (
     <div className="wrap">
-      <header>
-        <div className="mark">
-          <svg className="glyph" viewBox="0 0 20 16" aria-hidden="true">
-            <polyline points="1,13 8,6 13,9 19,3" className="g-actual" />
-            <polyline points="1,11 19,1" className="g-base" />
-          </svg>
-          <b>Brexit baseline</b>
-          <small>the assumption inside the number</small>
-        </div>
+      <header className="bar">
+        <Monogram />
+        <p className="series">
+          A series of six by <b>Finn Lakin</b>
+          <br />
+          No. 6 · Brexit and trade
+        </p>
         <button
           className="toggle"
           type="button"
@@ -157,25 +159,53 @@ export function App() {
       </header>
 
       <main>
-        <div className="hero">
-          <h1>What did Brexit do to UK trade with the EU? It depends what you compare it with.</h1>
-          <p className="lede">
-            Nobody can see the UK that stayed in, so every answer compares what happened with a baseline for what would
-            have happened. Pick one, and see whether it could forecast four ordinary years before you believe it.
-          </p>
-        </div>
+        <div className="stage">
+          <div className="head">
+            <h1>
+              Pick your <em>baseline.</em>
+            </h1>
+            <p className="dek">
+              Nobody can see the UK that stayed in, so every answer compares what happened with a baseline for what
+              would have happened. Here are all 86 of them at once, one thread each.
+            </p>
+          </div>
 
-        <div className={got ? "answer" : "answer skeleton"} aria-live="polite">
-          {failed ? (
-            <p>The data did not load. Refresh the page to try again.</p>
-          ) : got && d ? (
-            <Answer d={d} c={c} got={got} bigRef={bigRef} />
-          ) : (
-            <p>Loading thirty years of UK trade</p>
-          )}
-        </div>
+          <Note>
+            I kept reading confident figures for what Brexit did to trade, and they disagreed by more than the figures
+            themselves. Almost none said what they were comparing with. So I built every comparison I could defend,
+            including the ones that fail their own test.
+          </Note>
 
-        <Controls c={c} set={set} />
+          <figure className="sky-fig">
+            {d && engine && got ? (
+              <SkyChart
+                d={d}
+                engine={engine}
+                c={c}
+                mine={got.result}
+                onPick={(r) => set({ family: r.family, cutoff: r.cutoff, start: r.start })}
+              />
+            ) : (
+              <p className="waiting">
+                {failed ? "The data did not load. Refresh the page to try again." : "Fitting 86 baselines"}
+              </p>
+            )}
+          </figure>
+
+          <div className="side">
+            <div className={got ? "answer" : "answer skeleton"} aria-live="polite">
+              {failed ? (
+                <p>The data did not load. Refresh the page to try again.</p>
+              ) : got && d ? (
+                <Answer d={d} c={c} got={got} bigRef={bigRef} />
+              ) : (
+                <p>Loading thirty years of UK trade</p>
+              )}
+            </div>
+
+            <Controls c={c} set={set} />
+          </div>
+        </div>
 
         {got && d && <Sections d={d} c={c} got={got} />}
 
@@ -183,20 +213,12 @@ export function App() {
           <aside className="signoff">
             <p>
               Move the assumption and watch the number move with it. That's the whole point of building it this way.
-              More like it at <a href={PORTFOLIO}>finn-lakin-portfolio.netlify.app</a>.
             </p>
           </aside>
         )}
-      </main>
 
-      {got && (
-        <div className={away ? "dock shown" : "dock"} aria-hidden="true">
-          <b>{direction(got.estimate)}</b>
-          <span className={passes(d!, got.test) ? "ok" : "no"}>
-            {passes(d!, got.test) ? "passes its test" : "fails its test"}
-          </span>
-        </div>
-      )}
+        <SeriesStrip here="brexit-baseline" />
+      </main>
 
       <footer>
         <p>
@@ -209,10 +231,20 @@ export function App() {
           it. The pandemic, the energy shock and anything that hit trade elsewhere differently move these answers.
         </p>
         <p>
-          Built by Finn Lakin. The method, the code and every check are at{" "}
-          <a href={REPO}>github.com/FinnTech3/brexit-baseline</a>. No cookies, no tracking.
+          Made by Finn Lakin. The method, the code and every check are at{" "}
+          <a href={REPO}>github.com/FinnTech3/brexit-baseline</a>, and the rest of my work is at{" "}
+          <a href={PORTFOLIO}>finn-lakin-portfolio.netlify.app</a>. No cookies, no tracking.
         </p>
       </footer>
+
+      {got && (
+        <div className={away ? "dock shown" : "dock"} aria-hidden="true">
+          <b>{direction(got.estimate)}</b>
+          <span className={passes(d!, got.test) ? "ok" : "no"}>
+            {passes(d!, got.test) ? "passes its test" : "fails its test"}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -248,6 +280,7 @@ function Controls({ c, set }: { c: Choice; set: (patch: Partial<Choice>) => void
   const hi = lastStart(c.family, c.cutoff);
   return (
     <div className="controls" aria-label="Choose the baseline">
+      <p className="controls-head">Or set it by hand</p>
       <Segmented
         id="flow"
         label="Trade"
@@ -315,8 +348,7 @@ function Answer({
 }) {
   const shown = useCountUp(got.estimate) ?? got.estimate;
   const ok = passes(d, got.test);
-  const row = got.all.filter((r) => r.cutoff === c.cutoff);
-  const good = row.filter((r) => passes(d, r.test));
+  const good = got.all.filter((r) => passes(d, r.test));
   return (
     <>
       <div className="answer-main">
@@ -337,7 +369,7 @@ function Answer({
           <span>{`Run four years earlier, it was off by ${pct(got.test)} on ${c.cutoff - d.test_years + 1} to ${c.cutoff}, when nothing had changed yet.`}</span>
         </div>
         <p className="context">
-          {`Of the ${row.length} baselines measured from ${CUTOFF_LABEL[c.cutoff]!.toLowerCase()}, ${good.length} pass. ` +
+          {`Of the ${got.all.length} baselines in this sky, ${good.length} pass. ` +
             (good.length
               ? `They say ${between(Math.min(...good.map((r) => r.estimate)), Math.max(...good.map((r) => r.estimate)))}.`
               : "")}
@@ -359,6 +391,7 @@ function Sections({ d, c, got }: { d: BaselineFile; c: Choice; got: Derived }) {
     return { times: engine.times.slice(first + 11, first + 11 + uk.length), ratio: uk.map((v, i) => v / euR[i]!) };
   }, [engine, d]);
   const passing = got.all.filter((r) => passes(d, r.test));
+  const sky = useMemo(() => build(d, engine, c), [d, engine, c.flow, c.record]);
   const card = useMemo(
     () => ({
       lead: `${FLOW_LABEL[c.flow]} in the latest twelve months, against a baseline where ${describe(c, got.slope)}:`,
@@ -368,13 +401,16 @@ function Sections({ d, c, got }: { d: BaselineFile; c: Choice; got: Derived }) {
         `Run four years earlier, it was off by ${pct(got.test)}: it ${passes(d, got.test) ? "passes" : "fails"} its test.`,
         `Of ${got.all.length} baselines, the ${passing.length} that pass say ${between(Math.min(...passing.map((r) => r.estimate)), Math.max(...passing.map((r) => r.estimate)))}.`,
       ],
-      dots: got.all.map((r) => ({
-        v: r.estimate,
-        pass: passes(d, r.test),
-        me: r === got.result,
+      months: sky.grid.length,
+      sky: sky.threads.map((t) => ({
+        at: t.at,
+        vals: t.vals,
+        hue: FAMILIES.indexOf(t.r.family) as 0 | 1 | 2,
+        pass: passes(d, t.r.test),
+        me: t.r === got.result,
       })),
     }),
-    [c, got, d, passing],
+    [c, got, d, sky, passing],
   );
 
   return (
@@ -400,16 +436,6 @@ function Sections({ d, c, got }: { d: BaselineFile; c: Choice; got: Derived }) {
             <li className="l-fit">years it was fitted to</li>
             <li className="l-test">its test years</li>
           </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>Every baseline, and yours</h2>
-        <p className="sub">
-          {`All ${got.all.length} baselines for ${c.flow === "Exports" ? "exports" : "imports"}: three recipes, two starting points and every start year from ${FIRST_START}. Filled dots got their four test years within ${Math.round(d.pass * 100)}%; rings missed. The large dot is yours.`}
-        </p>
-        <div className="fig">
-          <StripChart results={got.all} mine={got.result} pass={d.pass} />
         </div>
       </section>
 
@@ -451,7 +477,7 @@ function Sections({ d, c, got }: { d: BaselineFile; c: Choice; got: Derived }) {
             <span className="pill">Pass</span>
             <div>
               <b>This page against the pipeline</b>
-              <span>{`The page refits every baseline itself; its tests hold all ${d.results.length} of its answers to the pipeline's.`}</span>
+              <span>{`The page refits every baseline itself; its tests hold all ${d.results.length} of its answers, and the last point of all ${d.results.length} threads, to the pipeline's.`}</span>
             </div>
           </li>
         </ul>

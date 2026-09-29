@@ -1,69 +1,93 @@
 :root {
-  --paper: #f5f6f4;
+  --paper: #eceef4;
   --panel: #ffffff;
-  --ink: #14171a;
-  --ink-2: #4f565c;
-  --muted: #646c72;
-  --rule: #dde1e0;
-  --grid: #e7eae9;
-  --rest: #c3c8c6;
-  --you: #4f46b8;
-  --other: #b3306a;
+  --ink: #15172a;
+  --ink-2: #454a63;
+  --muted: #5f6479;
+  --rule: #d4d8e4;
+  --edge: #7e839c;
+  --grid: #e3e6ef;
+  --rest: #82879e;
+  --you: #4a3cc0;
+  --accent: #4a3cc0;
+  --em: #4a3cc0;
   --good: #1f7a3a;
-  --good-bg: #e3f1e6;
-  --bad: #b3261e;
-  --bad-bg: #fbe4e2;
-  --focus: #2a78d6;
-  --focus-bg: #e8f1fb;
-  --signoff-link: #2a66c7;
+  --good-bg: #e2f0e6;
+  --bad: #a8202c;
+  --bad-bg: #f9e3e5;
+  --focus: #4a3cc0;
+  --focus-bg: #e9e7f8;
+  --signoff-link: #3b30a8;
   --sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --cond: "IBM Plex Sans Condensed", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   color-scheme: light;
 }
 
+/* The plate the sky is drawn on is night in either theme, so its colours are set once. */
+:root {
+  --night: #0b0d24;
+  --star: #ffffff;
+  --starline: #e9e7ff;
+  --sky-tick: #a09cd0;
+  --sky-grid: #2b2f55;
+  --sky-cut: #5a5f99;
+  --sky-band: #181b3c;
+  --f-trend: #7ec8f2;
+  --f-trend-dim: #4f7f9e;
+  --f-pace: #c9c2ff;
+  --f-pace-dim: #6f6aa8;
+  --f-drift: #ff9ec2;
+  --f-drift-dim: #a56584;
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --paper: #121516;
-    --panel: #1a1e1f;
-    --ink: #eef1f0;
-    --ink-2: #bcc3c2;
-    --muted: #939b9a;
-    --rule: #2c3232;
-    --grid: #232828;
-    --rest: #434a49;
-    --you: #9c93f0;
-    --other: #e8739e;
+    --paper: #0e1020;
+    --panel: #171a2e;
+    --ink: #ecebfa;
+    --ink-2: #c0bee0;
+    --muted: #9793bd;
+    --rule: #2a2d4a;
+    --edge: #6b6f96;
+    --grid: #20233c;
+    --rest: #6d6a93;
+    --you: #b9b1ff;
+    --accent: #b9b1ff;
+    --em: #b9b1ff;
     --good: #6fcf8a;
-    --good-bg: #1c2e22;
-    --bad: #f2b8b5;
-    --bad-bg: #3a1e1c;
-    --focus: #3987e5;
-    --focus-bg: #182634;
-    --signoff-link: #3995e5;
+    --good-bg: #16291f;
+    --bad: #ff9aa2;
+    --bad-bg: #361a1f;
+    --focus: #b9b1ff;
+    --focus-bg: #1d2040;
+    --signoff-link: #a49cf5;
+    color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  color-scheme: dark;
-  --paper: #121516;
-  --panel: #1a1e1f;
-  --ink: #eef1f0;
-  --ink-2: #bcc3c2;
-  --muted: #939b9a;
-  --rule: #2c3232;
-  --grid: #232828;
-  --rest: #434a49;
-  --you: #9c93f0;
-  --other: #e8739e;
+  --paper: #0e1020;
+  --panel: #171a2e;
+  --ink: #ecebfa;
+  --ink-2: #c0bee0;
+  --muted: #9793bd;
+  --rule: #2a2d4a;
+  --edge: #6b6f96;
+  --grid: #20233c;
+  --rest: #6d6a93;
+  --you: #b9b1ff;
+  --accent: #b9b1ff;
+  --em: #b9b1ff;
   --good: #6fcf8a;
-  --good-bg: #1c2e22;
-  --bad: #f2b8b5;
-  --bad-bg: #3a1e1c;
-  --focus: #3987e5;
-  --focus-bg: #182634;
-  --signoff-link: #3995e5;
+  --good-bg: #16291f;
+  --bad: #ff9aa2;
+  --bad-bg: #361a1f;
+  --focus: #b9b1ff;
+  --focus-bg: #1d2040;
+  --signoff-link: #a49cf5;
+  color-scheme: dark;
 }
 
 * {
@@ -114,73 +138,168 @@ select {
 
 /* header */
 
-header {
+.bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-block: 20px 8px;
+  gap: 12px;
+  padding-block: 14px 10px;
 }
 
-.mark {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  min-width: 0;
+.bar .monogram {
+  flex: none;
+  color: var(--accent);
 }
 
-.mark b {
-  font-family: var(--cond);
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.mark small {
+.series {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
-  font-size: 13px;
 }
 
-@media (max-width: 520px) {
-  .mark small {
-    display: none;
-  }
+.series b {
+  color: var(--ink);
+  font-weight: 400;
 }
 
 .toggle {
+  margin-left: auto;
+  flex: none;
   background: none;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--edge);
   border-radius: 999px;
   padding: 6px 12px;
-  font-size: 13px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--ink-2);
   cursor: pointer;
-  flex: none;
 }
 
-/* hero */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 
-.hero {
+/* the first screen: title, note, the sky and the answer */
+
+.stage {
   display: grid;
-  gap: 16px;
-  padding-block: 14px 8px;
+  gap: 18px;
+}
+
+.head {
+  padding-top: 8px;
 }
 
 h1 {
-  font-family: var(--cond);
+  font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(30px, 6vw, 46px);
-  line-height: 1.05;
+  font-size: clamp(34px, 9vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.02em;
   margin: 0;
-  text-wrap: balance;
-  max-width: 20ch;
 }
 
-.lede {
+h1 em {
+  display: block;
+  font-style: italic;
+  color: var(--em);
+  font-size: 1.7em;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+.dek {
+  font-size: clamp(16px, 2.2vw, 19px);
   color: var(--ink-2);
-  max-width: 60ch;
+  max-width: 46ch;
+  margin: 14px 0 0;
+}
+
+.side {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.note-from {
   margin: 0;
+  padding: 16px 18px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--panel);
+  border-radius: 0 12px 12px 0;
+  max-width: 62ch;
+}
+
+.note-from .who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.note-from p {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16.5px;
+  line-height: 1.55;
+}
+
+@media (min-width: 1000px) {
+  .stage {
+    grid-template-columns: minmax(330px, 0.8fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      "head sky"
+      "note sky"
+      "side sky";
+    grid-template-rows: auto auto 1fr;
+    column-gap: 40px;
+    align-items: start;
+  }
+
+  .head {
+    grid-area: head;
+  }
+
+  .note-from {
+    grid-area: note;
+  }
+
+  .side {
+    grid-area: side;
+  }
+
+  .stage > .sky-fig {
+    grid-area: sky;
+    position: sticky;
+    top: 16px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 999px) {
+  .note-from p {
+    font-size: 15.5px;
+    line-height: 1.5;
+  }
 }
 
 .btn {
@@ -225,15 +344,11 @@ h1 {
   min-width: 0;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 700px) and (max-width: 999px) {
   .answer {
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     column-gap: 32px;
     align-items: start;
-  }
-
-  .answer .facts {
-    grid-template-columns: 1fr;
   }
 
   .answer.skeleton {
@@ -323,14 +438,6 @@ h1 {
   display: grid;
   place-items: center;
   color: var(--muted);
-}
-
-/* The loaded answer is about this tall; holding the space stops the page
-   jumping when the data arrives. */
-@media (max-width: 859px) {
-  .answer.skeleton {
-    min-height: 600px;
-  }
 }
 
 /* sections */
@@ -546,6 +653,355 @@ footer p {
   max-width: 75ch;
 }
 
+/* the sky: every baseline for one trade at once */
+
+.sky-fig {
+  margin: 0;
+  background: var(--night);
+  border: 1px solid var(--sky-cut);
+  border-radius: 16px;
+  padding: 10px 10px 14px;
+  box-shadow: 0 24px 60px -34px rgba(4, 6, 24, 0.6);
+  display: grid;
+  gap: 10px;
+}
+
+.sky-fig .waiting {
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--sky-tick);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.sky-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.sky {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.plate {
+  fill: var(--night);
+}
+
+/* the twelve months the answer is taken from */
+.judged {
+  fill: var(--sky-band);
+  opacity: 0.85;
+}
+
+.sky-rule {
+  stroke: var(--sky-grid);
+  stroke-width: 1;
+}
+
+.sky-cut {
+  stroke: var(--sky-cut);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+}
+
+.horizon {
+  stroke: var(--starline);
+  stroke-width: 1.4;
+}
+
+/* labels that sit over the threads carry a night-coloured halo */
+.horizon-label,
+.sky .c-strong {
+  paint-order: stroke;
+  stroke: var(--night);
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.horizon-label {
+  fill: var(--starline);
+}
+
+/* the years each baseline was fitted to, where they all still agree */
+.fitted {
+  fill: none;
+  stroke: var(--sky-cut);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+
+.flown {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.flown.dim {
+  stroke-width: 0.8;
+}
+
+.flown.lit {
+  stroke-width: 1.7;
+}
+
+.glow path {
+  fill: none;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.16;
+}
+
+.flown.f-trend.lit,
+.glow .f-trend {
+  stroke: var(--f-trend);
+}
+
+.flown.f-trend.dim {
+  stroke: var(--f-trend-dim);
+}
+
+.end.f-trend.lit {
+  fill: var(--f-trend);
+}
+
+.end.f-trend.dim {
+  fill: var(--f-trend-dim);
+}
+
+.flown.f-pace.lit,
+.glow .f-pace {
+  stroke: var(--f-pace);
+}
+
+.flown.f-pace.dim {
+  stroke: var(--f-pace-dim);
+}
+
+.end.f-pace.lit {
+  fill: var(--f-pace);
+}
+
+.end.f-pace.dim {
+  fill: var(--f-pace-dim);
+}
+
+.flown.f-drift.lit,
+.glow .f-drift {
+  stroke: var(--f-drift);
+}
+
+.flown.f-drift.dim {
+  stroke: var(--f-drift-dim);
+}
+
+.end.f-drift.lit {
+  fill: var(--f-drift);
+}
+
+.end.f-drift.dim {
+  fill: var(--f-drift-dim);
+}
+
+.end {
+  stroke: none;
+}
+
+.picked path {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.picked.hovered path {
+  stroke: var(--starline);
+  stroke-width: 2;
+}
+
+.picked.hovered circle {
+  fill: var(--starline);
+}
+
+.picked.mine path {
+  stroke: var(--star);
+  stroke-width: 2.4;
+}
+
+.picked.mine .mine-glow {
+  stroke: var(--starline);
+  stroke-width: 10;
+  opacity: 0.2;
+}
+
+.picked.mine circle {
+  fill: var(--star);
+}
+
+.sky .c-tick {
+  fill: var(--sky-tick);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.sky .c-note {
+  fill: var(--sky-tick);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sky .c-strong {
+  fill: var(--star);
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.sky-fig .readout {
+  margin: 0;
+  padding-inline: 4px;
+  color: var(--starline);
+  font-family: var(--serif);
+  font-size: 15.5px;
+  line-height: 1.45;
+  min-height: 3em;
+}
+
+.sky-fig .legend {
+  margin: 0;
+  padding-inline: 4px;
+  color: var(--sky-tick);
+  font-size: 12.5px;
+}
+
+.sky-fig .legend li::before {
+  border-top: 2.5px solid currentColor;
+}
+
+.sky-fig .legend .l-trend::before {
+  border-top-color: var(--f-trend);
+}
+
+.sky-fig .legend .l-pace::before {
+  border-top-color: var(--f-pace);
+}
+
+.sky-fig .legend .l-drift::before {
+  border-top-color: var(--f-drift);
+}
+
+.legend-note {
+  margin: 0;
+  padding-inline: 4px;
+  color: var(--sky-tick);
+  font-size: 12.5px;
+}
+
+.controls-head {
+  margin: 0 0 2px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* the other five, so a reader who liked this one has somewhere to go next */
+
+.strip {
+  margin-top: 72px;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+
+.strip h2 {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+  max-width: none;
+}
+
+.strip-sub {
+  color: var(--ink-2);
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .works {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.work {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  transition: transform 160ms ease;
+}
+
+.work:hover {
+  transform: translateY(-2px);
+}
+
+.work svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.25;
+}
+
+.work span {
+  display: block;
+  padding: 8px 10px 10px;
+}
+
+.work small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.work strong {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.work.here {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
@@ -584,12 +1040,12 @@ footer p {
 }
 
 .segmented {
-  display: inline-flex;
-  border: 1px solid var(--rule);
+  display: flex;
+  border: 1px solid var(--edge);
   border-radius: 999px;
   padding: 3px;
   background: var(--panel);
-  width: fit-content;
+  width: 100%;
 }
 
 .segmented button {
@@ -607,41 +1063,12 @@ footer p {
   color: var(--paper);
 }
 
-@media (min-width: 860px) {
-  .controls {
-    grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 1.2fr);
-    align-items: end;
-    gap: 20px;
-  }
-}
-
 .pill.neutral {
   color: var(--ink-2);
   background: var(--grid);
 }
 
 /* brexit-baseline */
-
-.glyph {
-  width: 22px;
-  height: 18px;
-  align-self: center;
-  overflow: visible;
-}
-
-.g-actual {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 2;
-  stroke-linejoin: round;
-}
-
-.g-base {
-  fill: none;
-  stroke: var(--you);
-  stroke-width: 2;
-  stroke-dasharray: 3 2;
-}
 
 .big .dir {
   font-family: var(--cond);
@@ -684,7 +1111,7 @@ footer p {
   padding: 16px;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 700px) and (max-width: 999px) {
   .controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
@@ -692,14 +1119,19 @@ footer p {
   }
 }
 
+/* in a narrow column the options wrap, and a wrapped one takes the whole row
+   rather than sitting half-width beside a gap */
 .segmented {
   flex-wrap: wrap;
+  gap: 2px;
   border-radius: 12px;
 }
 
 .segmented button {
+  flex: 1 1 auto;
   min-height: 36px;
   border-radius: 9px;
+  white-space: nowrap;
 }
 
 input[type="range"] {
@@ -752,49 +1184,6 @@ input[type="range"] {
   fill: var(--you);
   font-size: 14px;
   font-weight: 600;
-}
-
-.c-pass {
-  fill: var(--you);
-}
-
-.c-fail {
-  fill: var(--panel);
-  stroke: var(--muted);
-  stroke-width: 1.4;
-}
-
-.c-mine {
-  fill: var(--ink);
-  stroke: var(--panel);
-  stroke-width: 2;
-}
-
-.c-zero {
-  stroke: var(--muted);
-  stroke-width: 1.4;
-}
-
-.c-row {
-  fill: var(--ink-2);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.c-level {
-  stroke: var(--you);
-  stroke-width: 2.5;
-}
-
-.c-level-label {
-  fill: var(--you);
-  font-family: var(--mono);
-  font-size: 12px;
-}
-
-.c-mark {
-  stroke: var(--muted);
-  stroke-dasharray: 3 3;
 }
 
 .legend {
@@ -871,13 +1260,13 @@ input[type="range"] {
   font-size: 14px;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 1000px) {
   .dock {
     display: none;
   }
 }
 
-@media (max-width: 859px) {
+@media (max-width: 999px) {
   footer {
     padding-bottom: 76px;
   }
@@ -900,16 +1289,6 @@ input[type="range"] {
 
   .verdict .pill {
     width: fit-content;
-  }
-}
-
-@media (min-width: 860px) {
-  .answer {
-    min-height: 0;
-  }
-
-  .answer.skeleton {
-    min-height: 270px;
   }
 }
 

@@ -4,6 +4,8 @@ import {
   type BaselineFile,
   type Choice,
   DEFAULT,
+  type Flow,
+  type Record as Whose,
   Engine,
   lastStart,
   monthAt,
@@ -12,9 +14,17 @@ import {
   settle,
   writeChoice,
 } from "./baseline";
+import { CEILING, FLOOR, build } from "./sky";
 
 const d = JSON.parse(readFileSync("public/data/baseline.json", "utf8")) as BaselineFile;
 const engine = new Engine(d);
+
+/** The three skies: exports on the UK's record, imports on the UK's, imports on the EU's. */
+const TRADES: [Flow, Whose][] = [
+  ["Exports", "UK"],
+  ["Imports", "UK"],
+  ["Imports", "EU"],
+];
 
 describe("the engine against the pipeline", () => {
   it("reproduces every one of the pipeline's 258 results", () => {
@@ -71,5 +81,46 @@ describe("the choice in the address", () => {
     expect(settle({ ...DEFAULT, family: "own trend", start: 2019 }).start).toBe(lastStart("own trend", 2019));
     expect(settle({ ...DEFAULT, start: 1990 }).start).toBe(2001);
     expect(settle({ ...DEFAULT, record: "EU" }).record).toBe("UK");
+  });
+});
+
+describe("the sky against the pipeline", () => {
+  it("ends every thread on the figure the page prints", () => {
+    let drawn = 0;
+    for (const [flow, record] of TRADES) {
+      const sky = build(d, engine, { ...DEFAULT, flow, record });
+      expect(sky.threads).toHaveLength(86);
+      for (const t of sky.threads) {
+        // the twelve months a thread's last point covers are the twelve the
+        // estimate is taken from, so the two are the same number
+        expect(t.vals[t.vals.length - 1]).toBeCloseTo(t.r.estimate, 9);
+        drawn++;
+      }
+    }
+    expect(drawn).toBe(d.results.length);
+  });
+
+  it("keeps every thread inside the sky's fixed edges", () => {
+    for (const [flow, record] of TRADES) {
+      for (const t of build(d, engine, { ...DEFAULT, flow, record }).threads) {
+        for (const v of t.vals) {
+          expect(v).toBeGreaterThan(FLOOR);
+          expect(v).toBeLessThan(CEILING);
+        }
+      }
+    }
+  });
+
+  it("starts each thread inside the years it was fitted to", () => {
+    for (const [flow, record] of TRADES) {
+      const sky = build(d, engine, { ...DEFAULT, flow, record });
+      for (const t of sky.threads) {
+        expect(t.at).toBeGreaterThanOrEqual(0);
+        expect(t.vals).toHaveLength(sky.grid.length - t.at);
+        // the twelve months its first point covers all fall inside the fit
+        expect(engine.years[sky.grid[t.at]! - 11]).toBeGreaterThanOrEqual(t.r.start);
+        expect(engine.years[sky.grid[t.at]!]).toBeLessThanOrEqual(t.r.cutoff + 1);
+      }
+    }
   });
 });

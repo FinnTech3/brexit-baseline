@@ -1,19 +1,41 @@
+import { CEILING, FLOOR } from "../lib/sky";
+
 // The result as a 1080 by 1350 picture, drawn in the browser; nothing is uploaded.
+
+export interface Thread {
+  /** Where on the shared grid of months the thread begins. */
+  at: number;
+  /** How far trade ran from what this baseline expects, at each of those months. */
+  vals: number[];
+  /** Which of the three recipes it is, coloured as the page colours it. */
+  hue: 0 | 1 | 2;
+  pass: boolean;
+  me: boolean;
+}
 
 export interface CardContent {
   lead: string;
   big: string;
   unit: string;
   lines: string[];
-  dots: { v: number; pass: boolean; me: boolean }[]; // every baseline for this trade
+  /** How many months the grid holds, so a thread knows where it starts. */
+  months: number;
+  sky: Thread[];
 }
 
-const INK = "#161614";
-const TEXT = "#f3f2ee";
-const SOFT = "#c3c2b7";
-const MUTED = "#9a988f";
-const RULE = "#3d3d3a";
-const PASS = "#9c93f0";
+const INK = "#0b0d24";
+const TEXT = "#eeecff";
+const SOFT = "#c2bdec";
+const MUTED = "#8e89c0";
+const RULE = "#39356a";
+// the three recipes, as the sky draws them: bright if the baseline passed its
+// placebo test, dim if it did not
+const HUES: [lit: string, dim: string][] = [
+  ["#7ec8f2", "#4f7f9e"],
+  ["#c9c2ff", "#6f6aa8"],
+  ["#ff9ec2", "#a56584"],
+];
+const PASS = "#b9b1ff";
 
 const FONTS = [
   '700 260px "IBM Plex Sans Condensed"',
@@ -104,55 +126,60 @@ export function drawCard(canvas: HTMLCanvasElement, c: CardContent): void {
     y += 12;
   }
 
-  // every baseline for this trade, one dot each, stacked so none overlap
-  const mid = 1350 - P - 240;
-  const lo = Math.min(-0.3, ...c.dots.map((d) => d.v));
-  const hi = Math.max(0.3, ...c.dots.map((d) => d.v));
-  const x = (v: number) => P + ((v - lo) / (hi - lo)) * inner;
-  const r = 7;
-  const step = 2 * r + 2;
-  const taken = new Map<number, number[]>();
-  const placed = [...c.dots]
-    .sort((a, b) => a.v - b.v)
-    .map((d) => {
-      const cx = x(d.v);
-      let k = 0;
-      while (taken.get(k)?.some((t) => Math.abs(t - cx) < step)) k = k > 0 ? -k : -k + 1;
-      taken.set(k, [...(taken.get(k) ?? []), cx]);
-      return { ...d, cx, cy: mid + k * step };
+  // every baseline for this trade as a thread. The page holds one scale across
+  // all three trades so it can be switched in place; a card is one picture, so
+  // it fills itself with the trade it shows.
+  const skyH = 360;
+  const skyTop = 1350 - P - 116 - skyH;
+  const all = c.sky.flatMap((t) => t.vals);
+  const pad = 0.06 * (Math.max(...all) - Math.min(...all));
+  const lo = Math.max(FLOOR, Math.min(...all) - pad);
+  const hi = Math.min(CEILING, Math.max(...all) + pad);
+  const gx = (k: number) => P + (k / (c.months - 1)) * inner;
+  const gy = (v: number) => skyTop + skyH - ((v - lo) / (hi - lo)) * skyH;
+  const line = (t: Thread) => {
+    ctx.beginPath();
+    t.vals.forEach((v, k) => {
+      const px = gx(t.at + k);
+      const py = gy(v);
+      if (k === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
     });
+    ctx.stroke();
+  };
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  for (const t of c.sky) {
+    if (t.me) continue;
+    ctx.strokeStyle = HUES[t.hue]![t.pass ? 0 : 1];
+    ctx.lineWidth = t.pass ? 3 : 1.4;
+    line(t);
+  }
   ctx.strokeStyle = RULE;
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(x(0), mid - 100);
-  ctx.lineTo(x(0), mid + 100);
+  ctx.moveTo(P, gy(0));
+  ctx.lineTo(P + inner, gy(0));
   ctx.stroke();
-  for (const d of placed.filter((p) => !p.me)) {
-    ctx.beginPath();
-    ctx.arc(d.cx, d.cy, d.pass ? r : r - 1.5, 0, 2 * Math.PI);
-    if (d.pass) {
-      ctx.fillStyle = PASS;
-      ctx.fill();
-    } else {
-      ctx.strokeStyle = MUTED;
-      ctx.lineWidth = 2.5;
-      ctx.stroke();
-    }
-  }
-  const me = placed.find((p) => p.me);
+  const me = c.sky.find((t) => t.me);
   if (me) {
+    ctx.strokeStyle = TEXT;
+    ctx.lineWidth = 7;
+    line(me);
     ctx.beginPath();
-    ctx.arc(me.cx, me.cy, r + 7, 0, 2 * Math.PI);
+    ctx.arc(gx(c.months - 1), gy(me.vals[me.vals.length - 1]!), 11, 0, 2 * Math.PI);
     ctx.fillStyle = TEXT;
     ctx.fill();
   }
-  ctx.fillStyle = MUTED;
+  // the horizon's label sits over the threads, so it carries a halo
   ctx.font = '400 26px "IBM Plex Sans", sans-serif';
-  ctx.fillText("lower", P, mid + 136);
-  ctx.textAlign = "right";
-  ctx.fillText("higher", 1080 - P, mid + 136);
-  ctx.textAlign = "left";
-  ctx.fillText("every baseline; filled: passed its test; white: this one", P, mid + 172);
+  ctx.strokeStyle = INK;
+  ctx.lineWidth = 6;
+  ctx.strokeText("what happened", P, gy(0) - 14);
+  ctx.fillStyle = SOFT;
+  ctx.fillText("what happened", P, gy(0) - 14);
+  ctx.fillStyle = MUTED;
+  ctx.fillText("every baseline for this trade; bright: passed its test; white: this one", P, skyTop + skyH + 42);
   ctx.font = '400 32px "IBM Plex Mono", monospace';
   ctx.fillText("finntech3.github.io/brexit-baseline", P, 1350 - P);
 }

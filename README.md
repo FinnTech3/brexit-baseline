@@ -170,6 +170,14 @@ year from 2021 to 2025; against the 2019 ratio, imports were between 3.5% and
   line with how far the two records have come apart since 2016 to 2020, when
   the UK recorded 94p arriving for every £1 the EU recorded sending.
 
+- **The picture.** The page draws all 86 baselines for one trade at once. The
+  straight line across the middle is what happened; each thread is one
+  baseline, drawn as far from that line as trade ran from what that baseline
+  expects, in the twelve months to each month. Threads hold near the line
+  through the years they were fitted to, leave it at their cut-off and spread
+  out after it, so the thread's last point is the headline percentage. The
+  ones that pass their test burn bright. Pointing at a thread takes it.
+
 More on each choice in [docs/DESIGN-DECISIONS.md](docs/DESIGN-DECISIONS.md).
 Every source, address and checksum is in [docs/SOURCES.md](docs/SOURCES.md).
 
