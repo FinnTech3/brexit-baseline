@@ -672,14 +672,23 @@ footer p {
   gap: 10px;
 }
 
+/* the same shape the sky will take, so nothing moves when it arrives */
 .sky-fig .waiting {
-  min-height: 380px;
   display: grid;
-  place-items: center;
+  gap: 10px;
   margin: 0;
   color: var(--sky-tick);
   font-family: var(--mono);
   font-size: 13px;
+}
+
+.sky-fig .waiting > p:first-child {
+  aspect-ratio: 1 / 0.74;
+  min-height: 300px;
+  max-height: 480px;
+  display: grid;
+  place-items: center;
+  margin: 0;
 }
 
 .sky-wrap {
@@ -878,10 +887,17 @@ footer p {
   font-family: var(--serif);
   font-size: 15.5px;
   line-height: 1.45;
-  min-height: 3em;
+  /* three lines held open: the longest readout needs them, and the height
+     then does not move as the reader points at different threads */
+  min-height: 4.35em;
 }
 
+/* two fixed columns rather than wrapping, so its height is the same before
+   and after the web font arrives */
 .sky-fig .legend {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2px 22px;
   margin: 0;
   padding-inline: 4px;
   color: var(--sky-tick);

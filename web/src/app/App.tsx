@@ -186,10 +186,24 @@ export function App() {
                 onPick={(r) => set({ family: r.family, cutoff: r.cutoff, start: r.start })}
               />
             ) : (
-              <p className="waiting">
-                {failed ? "The data did not load. Refresh the page to try again." : "Fitting 86 baselines"}
-              </p>
+              <div className="waiting">
+                <p>{failed ? "The data did not load. Refresh the page to try again." : "Fitting 86 baselines"}</p>
+                <p className="readout" />
+              </div>
             )}
+
+            {/* the legend is fixed furniture, so it is there from the first
+                paint and the page does not grow when the sky arrives */}
+            <ul className="legend" aria-hidden="true">
+              <li className="l-trend">its own trend</li>
+              <li className="l-pace">non-EU trade</li>
+              <li className="l-drift">non-EU, with drift</li>
+            </ul>
+
+            <p className="legend-note" aria-hidden="true">
+              Bright threads could forecast four ordinary years. Dim ones could not. The white one is yours. The block
+              at the right is the twelve months the answer is taken from.
+            </p>
           </figure>
 
           <div className="side">

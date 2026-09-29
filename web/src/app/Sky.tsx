@@ -242,17 +242,6 @@ export function SkyChart({ d, engine, c, mine, onPick }: Props) {
           ? `That one: ${tell(shown.r, d)}. Tap it to take it.`
           : `Yours: ${tell(mine, d)}. Point anywhere in the sky to read another, or tap it to take it.`}
       </p>
-
-      <ul className="legend" aria-hidden="true">
-        <li className="l-trend">its own trend</li>
-        <li className="l-pace">non-EU trade</li>
-        <li className="l-drift">non-EU, with drift</li>
-      </ul>
-
-      <p className="legend-note" aria-hidden="true">
-        Bright threads could forecast four ordinary years. Dim ones could not. The white one is yours. The block at the
-        right is the twelve months the answer is taken from.
-      </p>
     </div>
   );
 }
