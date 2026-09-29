@@ -171,8 +171,8 @@ export function App() {
           </div>
 
           <Note>
-            I kept reading confident figures for what Brexit did to trade, and they disagreed by more than the figures
-            themselves. Almost none said what they were comparing with. So I built every comparison I could defend,
+            Every confident figure I read for what Brexit did to trade disagreed with the next by more than the figures
+            themselves, and almost none said what it was comparing with. So here is every comparison I could defend,
             including the ones that fail their own test.
           </Note>
 
