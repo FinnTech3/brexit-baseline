@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   type BaselineFile,
   type Choice,
+  looksLikeBaselineFile,
   DEFAULT,
   type Flow,
   type Record as Whose,
@@ -122,5 +123,13 @@ describe("the sky against the pipeline", () => {
         expect(engine.years[sky.grid[t.at]!]).toBeLessThanOrEqual(t.r.cutoff + 1);
       }
     }
+  });
+});
+
+describe("the load guard", () => {
+  it("accepts the real file and rejects anything that is not it", () => {
+    expect(looksLikeBaselineFile(d)).toBe(true);
+    for (const bad of [null, undefined, {}, [], [1, 2, 3], { series: {} }, { results: [] }, "text", 5])
+      expect(looksLikeBaselineFile(bad)).toBe(false);
   });
 });

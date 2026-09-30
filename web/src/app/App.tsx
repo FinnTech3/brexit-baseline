@@ -10,6 +10,7 @@ import {
   type Flow,
   type Result,
   lastStart,
+  looksLikeBaselineFile,
   passes,
   readChoice,
   settle,
@@ -114,8 +115,11 @@ export function App() {
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/baseline.json`)
-      .then((r) => r.json() as Promise<BaselineFile>)
-      .then(setD)
+      .then((r) => r.json())
+      .then((file) => {
+        if (!looksLikeBaselineFile(file)) throw new Error("unexpected data shape");
+        setD(file);
+      })
       .catch(() => setFailed(true));
   }, []);
 

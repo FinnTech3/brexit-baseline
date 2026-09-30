@@ -220,3 +220,18 @@ export function writeChoice(c: Choice): string {
   if (c.flow === "Imports" && c.record === "EU") q.set("record", "eu");
   return `?${q}`;
 }
+
+/**
+ * True when a parsed JSON body looks like the baseline file, rather than an
+ * error page or a stale deploy's wrong file. It checks only the top-level
+ * fields the page reads at render, enough to route a bad shape to the "did not
+ * load" message instead of a blank screen; the pipeline guarantees the rest.
+ */
+export function looksLikeBaselineFile(x: unknown): x is BaselineFile {
+  if (typeof x !== "object" || x === null) return false;
+  const f = x as Partial<BaselineFile>;
+  return (
+    typeof f.series === "object" && f.series !== null &&
+    Array.isArray(f.results) && typeof f.months === "number"
+  );
+}
