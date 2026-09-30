@@ -125,7 +125,7 @@ select {
 }
 
 .wrap {
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 16px 56px;
 }
@@ -266,15 +266,15 @@ h1 em {
   line-height: 1.55;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 980px) {
   .stage {
-    grid-template-columns: minmax(330px, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
     grid-template-areas:
       "head sky"
       "note sky"
       "side sky";
     grid-template-rows: auto auto 1fr;
-    column-gap: 40px;
+    column-gap: 44px;
     align-items: start;
   }
 
@@ -301,7 +301,7 @@ h1 em {
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 979px) {
   .note-from p {
     font-size: 15.5px;
     line-height: 1.5;
@@ -350,7 +350,7 @@ h1 em {
   min-width: 0;
 }
 
-@media (min-width: 700px) and (max-width: 999px) {
+@media (min-width: 700px) and (max-width: 979px) {
   .answer {
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     column-gap: 32px;
@@ -1133,7 +1133,7 @@ footer p {
   padding: 16px;
 }
 
-@media (min-width: 700px) and (max-width: 999px) {
+@media (min-width: 700px) and (max-width: 979px) {
   .controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
@@ -1282,13 +1282,13 @@ input[type="range"] {
   font-size: 14px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 980px) {
   .dock {
     display: none;
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 979px) {
   footer {
     padding-bottom: 76px;
   }
